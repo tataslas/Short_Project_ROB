@@ -1,25 +1,42 @@
 
-%Human body
+close all
+clear
+load('/usr/local/MATLAB/R2016b/licenses/short_project_1/SP_material/F_V_Human_Body.mat')
+
+
+%HUMAN BODY
 patch('Faces',F,'Vertices',V,'FaceColor','green')
 axis equal
 %axis ([20 -20 20 -20 20 -20])
 hold on
 
-
-X = [-6 6 6 -6];
-Y = [0 0 20.7 20.7];
-Z_0 = [-1.6 -1.6 -2.1 -2.1];
-
+%MESA
+X_m = [-6 6 6 -6];
+Y_m = [0 0 20.7 20.7];
+Z_m = [-2 -2 -2 -2];
 C = [0.5];
-
-%figure
-%axis ([-0.5 1.5 -0.5 1.5 -0.5 1.5])
 % labelling
 zlabel('z');ylabel('y');xlabel('x');
-% Create title
-title('Mesa');
 % drawing the figure
-fill3(X,Y,Z_0,C);
+fill3(X_m,Y_m,Z_m,C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud');
 
-%alpha 0.2
-view() 
+%PATAS
+[Xp1,Yp1,Zp1] = cylinder(0.3);
+Zp1(2,:) = 5;
+surface(Xp1+5,Yp1+20,Zp1-7,'FaceColor', [.37 .45 .64] );
+
+[Xp2,Yp2,Zp2] = cylinder(0.3);
+Zp2(2,:) = 5;
+surface(Xp2-5,Yp2+20,Zp2-7,'FaceColor', [.37 .45 .64] );
+
+[Xp3,Yp3,Zp3] = cylinder(0.3);
+Zp3(2,:) = 5;
+surface(Xp3+5,Yp3+1,Zp3-7,'FaceColor', [.37 .45 .64] );
+
+[Xp4,Yp4,Zp4] = cylinder(0.3);
+Zp4(2,:) = 5;
+surface(Xp4-5,Yp4+1,Zp4-7,'FaceColor', [.37 .45 .64] );
+
+
+
+view();
