@@ -4,20 +4,15 @@ clear
 cargaCrani;
 
 Vc = Vc/600;
-Vc(:,1) = Vc(:,1)+2;
-
-%B=eul2tr(0.4,0.5,0.3)
-
-%th_y=atan2(Vc(1,3),Vc(3,3)) % rotation arount X of {WRF}. Pay attention to sign
-%Vc=troty(th_y)*Vc; % notice premultiplication. i.e around X {WRF}. Now Z of{B4} is coplanar to the plane XZ of {WRF}
-
-%Vc = Vc+1;
+Vc = Vc*rotx(pi/2);
+Vc = Vc*rotz(-pi/2);
+Vc(:,1) = Vc(:,1)+1;
 
 plotCrani
 load('C:\Users\fgrub\Documents\MATLAB\SP_material/F_V_Human_Body.mat')
 V = V/10;
-V(:,2) = V(:,2)-2;
-V(:,1) = V(:,1)+2;
+V = V*rotz(-pi/2);
+V(:,1) = V(:,1)+3;
 
 %PUMA
 mdl_puma560_Craigh
@@ -29,41 +24,39 @@ axis equal
 %axis ([20 -20 20 -20 20 -20])
 hold on
 
-desplz_x = 2;
-desplz_y = 2;
-%MESA OPERACIONES
-X_m = [-6 6 6 -6];
-Y_m = [0 0 20.7 20.7];
-Z_m = [-2 -2 -2 -2];
-C = [0.5];
 
-X_m = (X_m/10) + desplz_x; %le sumo 1 para colocarlo donde quiero, en las patas igual
-Y_m = (Y_m/10) - desplz_y;
-Z_m = Z_m/10;
+%MESA OPERACIONES
+
+taula = [-6,0,-2;6,0,-2;6,20.7,-2;-6,20.7,-2];
+taula = taula/10;
+taula = taula*rotz(-pi/2);
+taula(:,1) = taula(:,1) + 3;
+
+C = [0.5];
 
 % labelling
 zlabel('z');ylabel('y');xlabel('x');
 % drawing the figure
-fill3(X_m,Y_m,Z_m,C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud', 'EdgeColor', [.37 .45 .64]);
+fill3(taula(:,1),taula(:,2),taula(:,3),C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud', 'EdgeColor', [.37 .45 .64]);
 material metal;
 
 %PATAS MESA OPERACIONES
 [Xp1,Yp1,Zp1] = cylinder(0.3);
 Zp1(2,:) = 5;
 
-surface((Xp1+5)/10+desplz_x,(Yp1+20)/10-desplz_y,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp1)/10 + 1,(Yp1)/10 + 0.5,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xp2,Yp2,Zp2] = cylinder(0.3);
 Zp2(2,:) = 5;
-surface((Xp2-5)/10+desplz_x,(Yp2+20)/10-desplz_y,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp2)/10 + 1,(Yp2)/10 - 0.5,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp3,Yp3,Zp3] = cylinder(0.3);
 Zp3(2,:) = 5;
-surface((Xp3+5)/10+desplz_x,(Yp3+1)/10-desplz_y,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp3)/10 + 2.95,(Yp3)/10 + 0.5,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp4,Yp4,Zp4] = cylinder(0.3);
 Zp4(2,:) = 5;
-surface((Xp4-5)/10+desplz_x,(Yp4+1)/10-desplz_y,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp4)/10 + 2.95,(Yp4)/10 - 0.5,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
 desplz_x = 1.5
