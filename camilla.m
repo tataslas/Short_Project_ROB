@@ -1,15 +1,15 @@
 close all
 clear
 
-cargaCrani;
+[Vc, Fc, Nc, Crani] = stlRead('Crani.stl');
 
 Vc = Vc/600;
 Vc = Vc*rotx(pi/2);
 Vc = Vc*rotz(-pi/2);
 Vc(:,1) = Vc(:,1)+1;
 
-plotCrani
-load('C:\Users\fgrub\Documents\MATLAB\SP_material/F_V_Human_Body.mat')
+stlPlot(Vc, Fc, Crani)
+load('F_V_Human_Body.mat')
 V = V/10;
 V = V*rotz(-pi/2);
 V(:,1) = V(:,1)+3;
