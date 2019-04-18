@@ -1,8 +1,22 @@
-
 close all
 clear
-load('/usr/local/MATLAB/R2016b/licenses/short_project_1/SP_material/F_V_Human_Body.mat')
 
+[Vc, Fc, Nc, Crani] = stlRead('Crani.stl');
+
+Vc = Vc/600;
+Vc = Vc*rotx(pi/2);
+Vc = Vc*rotz(-pi/2);
+Vc(:,1) = Vc(:,1)+1;
+
+stlPlot(Vc, Fc, Crani)
+load('F_V_Human_Body.mat')
+V = V/10;
+V = V*rotz(-pi/2);
+V(:,1) = V(:,1)+3;
+
+%PUMA
+mdl_puma560_Craigh
+p560Craigh.plot(qz)	
 
 %HUMAN BODY
 patch('Faces',F,'Vertices',V,'FaceColor','white')
@@ -12,38 +26,49 @@ hold on
 
 
 %MESA OPERACIONES
-X_m = [-6 6 6 -6];
-Y_m = [0 0 20.7 20.7];
-Z_m = [-2 -2 -2 -2];
+
+taula = [-6,0,-2;6,0,-2;6,20.7,-2;-6,20.7,-2];
+taula = taula/10;
+taula = taula*rotz(-pi/2);
+taula(:,1) = taula(:,1) + 3;
+
 C = [0.5];
+
 % labelling
 zlabel('z');ylabel('y');xlabel('x');
 % drawing the figure
-fill3(X_m,Y_m,Z_m,C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud', 'EdgeColor', [.37 .45 .64]);
+fill3(taula(:,1),taula(:,2),taula(:,3),C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud', 'EdgeColor', [.37 .45 .64]);
 material metal;
 
 %PATAS MESA OPERACIONES
 [Xp1,Yp1,Zp1] = cylinder(0.3);
 Zp1(2,:) = 5;
-surface(Xp1+5,Yp1+20,Zp1-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+
+surface((Xp1)/10 + 1,(Yp1)/10 + 0.5,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xp2,Yp2,Zp2] = cylinder(0.3);
 Zp2(2,:) = 5;
-surface(Xp2-5,Yp2+20,Zp2-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp2)/10 + 1,(Yp2)/10 - 0.5,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp3,Yp3,Zp3] = cylinder(0.3);
 Zp3(2,:) = 5;
-surface(Xp3+5,Yp3+1,Zp3-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp3)/10 + 2.95,(Yp3)/10 + 0.5,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp4,Yp4,Zp4] = cylinder(0.3);
 Zp4(2,:) = 5;
-surface(Xp4-5,Yp4+1,Zp4-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp4)/10 + 2.95,(Yp4)/10 - 0.5,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
+desplz_x = 1.5
+desplz_y = 1.5
 %MESA AUXILIAR
 X_ma = [-13 -8 -8 -13];
 Y_ma = [23 23 28 28];
 Z_ma = [-2 -2 -2 -2];
+
+X_ma = X_ma/10 + desplz_x;
+Y_ma = Y_ma/10 - desplz_y;
+Z_ma = Z_ma/10
 %C = [0.5];
 % labelling
 zlabel('z');ylabel('y');xlabel('x');
@@ -54,23 +79,19 @@ material metal;
 %PATAS MESA AUXILIAR
 [Xpa1,Ypa1,Zpa1] = cylinder(0.3);
 Zpa1(2,:) = 5;
-surface(Xpa1-12.5,Ypa1+23.5,Zpa1-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xpa1-12.5)/10+desplz_x,(Ypa1+23.5)/10-desplz_y,(Zpa1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xpa2,Ypa2,Zpa2] = cylinder(0.3);
 Zpa2(2,:) = 5;
-surface(Xpa2-12.5,Ypa2+27.5,Zpa2-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xpa2-12.5)/10+desplz_x,(Ypa2+27.5)/10-desplz_y,(Zpa2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xpa3,Ypa3,Zpa3] = cylinder(0.3);
 Zpa3(2,:) = 5;
-surface(Xpa3-8.5,Ypa3+23.5,Zpa3-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xpa3-8.5)/10+desplz_x,(Ypa3+23.5)/10-desplz_y,(Zpa3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xpa4,Ypa4,Zpa4] = cylinder(0.3);
 Zpa4(2,:) = 5;
-surface(Xpa4-8.5,Ypa4+27.5,Zpa4-7,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xpa4-8.5)/10+desplz_x,(Ypa4+27.5)/10-desplz_y,(Zpa4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
-
-%CRANEO
-stlPlot(Vc, Fc, Crani)
 
 view(3);
-

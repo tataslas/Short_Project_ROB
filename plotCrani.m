@@ -1,6 +1,6 @@
 
 %Esta linea sola también pinta el crani
-%stlPlot(Vc, Fc, Crani)
+stlPlot(Vc, Fc, Crani)
 
 
 
