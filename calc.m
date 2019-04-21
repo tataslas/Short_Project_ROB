@@ -36,16 +36,18 @@ XcentroCrani = Xmin
 YcentroCrani = Ymin + (anchoCrani/2)
 ZcentroCrani = Zmin + (fondoCrani/2)
 
+centroCrani = [XcentroCrani,YcentroCrani,ZcentroCrani]
+
 %Centro crani dicom
 XcentroDicom = 0
 YcentroDicom = 124.86
 ZcentroDicom = 149.71
 
 %Operaciones de transformación
-Xcentro = XcentroCrani
-Ycentro = YcentroCrani + (YcentroDicom * mmCoord_Ancho)
-Zcentro = ZcentroCrani + (ZcentroDicom * mmCoord_Fondo)
+Xorigen = XcentroCrani
+Yorigen = YcentroCrani - (YcentroDicom * mmCoord_Ancho)
+Zorigen = ZcentroCrani - (ZcentroDicom * mmCoord_Fondo)
 
 %Centro superior del crani en matlab
-centro = [Xcentro,Ycentro,Zcentro]
+origen = [Xorigen,Yorigen,Zorigen]
 

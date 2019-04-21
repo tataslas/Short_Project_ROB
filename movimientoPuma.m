@@ -33,12 +33,8 @@ Q= p560.ikine6s(pos0, 'run')
 Q= p560.ikine6s(tor1, 'run')
 p560.plot(Q)
 
-posInventada = [0.5,-0.05,-0.02]
-Q= p560.ikine6s(posInventada, 'run')
-p560.plot(Q)
 
-centro = [0.537,-0.0131,0.02855]
-Q= p560.ikine6s(centro, 'run')
+Q= p560.ikine6s(centroCrani, 'run')
 p560.plot(Q)
 
 origen = [0.537,-0.2171,-0.22286]
