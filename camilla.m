@@ -45,19 +45,19 @@ material metal;
 [Xp1,Yp1,Zp1] = cylinder(0.3);
 Zp1(2,:) = 5;
 
-surface((Xp1)/10 + 0.75,(Yp1)/10 + 0.5,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp1)/10 + 0.75,(Yp1)/10 + 0.5,(Zp1-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xp2,Yp2,Zp2] = cylinder(0.3);
 Zp2(2,:) = 5;
-surface((Xp2)/10 + 0.75,(Yp2)/10 - 0.5,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp2)/10 + 0.75,(Yp2)/10 - 0.5,(Zp2-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp3,Yp3,Zp3] = cylinder(0.3);
 Zp3(2,:) = 5;
-surface((Xp3)/10 + 2.6,(Yp3)/10 + 0.5,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp3)/10 + 2.6,(Yp3)/10 + 0.5,(Zp3-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp4,Yp4,Zp4] = cylinder(0.3);
 Zp4(2,:) = 5;
-surface((Xp4)/10 + 2.6,(Yp4)/10 - 0.5,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp4)/10 + 2.6,(Yp4)/10 - 0.5,(Zp4-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
 desplz_x = 1.5
