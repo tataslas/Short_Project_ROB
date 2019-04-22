@@ -52,22 +52,6 @@ Zorigen = ZcentroCrani - (ZcentroDicom * mmCoord_Z)
 digits(4)
 origen = vpa([Xorigen,Yorigen,Zorigen])
 
-%Tornillos en el dicom
-tor1Dicom = [19*1.4,121.9,210.1]
-tor2Dicom = [48*1.4,186.56,210.1]
-tor3Dicom = [81*1.4,70.37,214.37]
-
-tor1Dicom(1) = (tor1Dicom(1) * mmCoord_X) + origen(1)
-tor1Dicom(2) = (tor1Dicom(2) * mmCoord_Y) + origen(2)
-tor1Dicom(3) = (tor1Dicom(3) * mmCoord_Z) + origen(3)
-
-tor2Dicom(1) = (tor2Dicom(1) * mmCoord_X) + origen(1)
-tor2Dicom(2) = (tor2Dicom(2) * mmCoord_Y) + origen(2)
-tor2Dicom(3) = (tor2Dicom(3) * mmCoord_Z) + origen(3)
-
-tor3Dicom(1) = (tor3Dicom(1) * mmCoord_X) + origen(1)
-tor3Dicom(2) = (tor3Dicom(2) * mmCoord_Y) + origen(2)
-tor3Dicom(3) = (tor3Dicom(3) * mmCoord_Z) + origen(3)
 
 puntoFueraCraneo = [48*1.4,129.12,11.21]
 puntoFueraCraneo(1) = (puntoFueraCraneo(1) * mmCoord_X) + origen(1)

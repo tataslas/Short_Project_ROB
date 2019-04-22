@@ -28,11 +28,6 @@ pos0 = [0.5452,0.0000000112,-0.0210]
 Q= p560.ikine6s(pos0, 'run')
 p560.plot(Q)
 
-tor1 = [0.7369,0.2139,-0.09259]
-Q= p560.ikine6s(tor1, 'run')
-p560.plot(Q)
-
-
 Q= p560.ikine6s(centroCrani, 'run')
 p560.plot(Q)
 
@@ -42,22 +37,10 @@ origen = [ 0.537, -0.2171, -0.2229]
 Q= p560.ikine6s(origen, 'run')
 p560.plot(Q)
 
-tor1Dicom = [0.5821,0.3902,0.6328]
-Q= p560.ikine6s(tor1Dicom, 'run')
-p560.plot(Q)
-
-Q= p560.ikine6s(tor2Dicom, 'run')
-p560.plot(Q)
-
-Q= p560.ikine6s(tor3Dicom, 'run')
-p560.plot(Q)
-
 Q= p560.ikine6s(puntoFueraCraneo, 'run')
 p560.plot(Q)
 
-O = [0.537,0.1909,0.2799]
-Q= p560.ikine6s(O, 'run')
-p560.plot(Q)
+
 
 
 
