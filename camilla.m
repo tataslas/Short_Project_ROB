@@ -45,19 +45,19 @@ material metal;
 [Xp1,Yp1,Zp1] = cylinder(0.3);
 Zp1(2,:) = 5;
 
-surface((Xp1)/10 + 0.75,(Yp1)/10 + 0.5,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp1)/10 + 0.75,(Yp1)/10 + 0.5,(Zp1-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xp2,Yp2,Zp2] = cylinder(0.3);
 Zp2(2,:) = 5;
-surface((Xp2)/10 + 0.75,(Yp2)/10 - 0.5,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp2)/10 + 0.75,(Yp2)/10 - 0.5,(Zp2-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp3,Yp3,Zp3] = cylinder(0.3);
 Zp3(2,:) = 5;
-surface((Xp3)/10 + 2.6,(Yp3)/10 + 0.5,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp3)/10 + 2.6,(Yp3)/10 + 0.5,(Zp3-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp4,Yp4,Zp4] = cylinder(0.3);
 Zp4(2,:) = 5;
-surface((Xp4)/10 + 2.6,(Yp4)/10 - 0.5,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp4)/10 + 2.6,(Yp4)/10 - 0.5,(Zp4-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
 desplz_x = 1.5
@@ -82,19 +82,19 @@ material metal;
 %PATAS MESA AUXILIAR
 [Xpa1,Ypa1,Zpa1] = cylinder(0.3);
 Zpa1(2,:) = 5;
-surface((Xpa1-12.5)/10+desplz_x,(Ypa1+23.5)/10-desplz_y,(Zpa1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xpa1-12.5)/10+desplz_x,(Ypa1+23.5)/10-desplz_y,(Zpa1-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xpa2,Ypa2,Zpa2] = cylinder(0.3);
 Zpa2(2,:) = 5;
-surface((Xpa2-12.5)/10+desplz_x,(Ypa2+27.5)/10-desplz_y,(Zpa2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xpa2-12.5)/10+desplz_x,(Ypa2+27.5)/10-desplz_y,(Zpa2-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xpa3,Ypa3,Zpa3] = cylinder(0.3);
 Zpa3(2,:) = 5;
-surface((Xpa3-8.5)/10+desplz_x,(Ypa3+23.5)/10-desplz_y,(Zpa3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xpa3-8.5)/10+desplz_x,(Ypa3+23.5)/10-desplz_y,(Zpa3-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xpa4,Ypa4,Zpa4] = cylinder(0.3);
 Zpa4(2,:) = 5;
-surface((Xpa4-8.5)/10+desplz_x,(Ypa4+27.5)/10-desplz_y,(Zpa4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xpa4-8.5)/10+desplz_x,(Ypa4+27.5)/10-desplz_y,(Zpa4-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
 view(3);
