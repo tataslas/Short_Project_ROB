@@ -1,11 +1,13 @@
-%Esta linea sola también pinta el crani
-%stlPlot(Vc, Fc, Crani)
+
+%Esta linea sola tambiÃ©n pinta el crani
+stlPlot(Vc, Fc, Crani)
+
+
 
 %STLPLOT is an easy way to plot an STL object
 %V is the Nx3 array of vertices
 %F is the Mx3 array of faces
 %NAME is the name of the object, that will be displayed as a title
-
 figure;
 object.vertices = Vc;
 object.faces = Fc;
@@ -21,3 +23,9 @@ axis equal;
 %view([-135 35]);
 %grid on;
 %title(Crani);
+
+
+
+
+
+

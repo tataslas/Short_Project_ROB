@@ -1,36 +1,40 @@
 close all
 clear
 
+% CARGA CRANI
 [Vc, Fc, Nc, Crani] = stlRead('Crani.stl');
+% [A1, A2, A3, Esfera] = stlRead('sphere_ascii.stl');
 
+%Escalar, mover, rotar crani
 Vc = Vc/600;
 Vc = Vc*rotx(pi/2);
 Vc = Vc*rotz(-pi/2);
-Vc(:,1) = Vc(:,1)+1;
+Vc(:,1) = Vc(:,1)+0.7;
 
+%pintar crani
 stlPlot(Vc, Fc, Crani)
+% stlPlot(A1, A2, Esfera)
+
+
+%PUMA
+mdl_puma560
+p560.plot(qz)	
+
+%HUMAN BODY
 load('F_V_Human_Body.mat')
 V = V/10;
 V = V*rotz(-pi/2);
-V(:,1) = V(:,1)+3;
+V(:,1) = V(:,1)+2.7;
 
-%PUMA
-mdl_puma560_Craigh
-p560Craigh.plot(qz)	
-
-%HUMAN BODY
 patch('Faces',F,'Vertices',V,'FaceColor','white')
 axis equal
-%axis ([20 -20 20 -20 20 -20])
 hold on
 
-
 %MESA OPERACIONES
-
 taula = [-6,0,-2;6,0,-2;6,20.7,-2;-6,20.7,-2];
 taula = taula/10;
 taula = taula*rotz(-pi/2);
-taula(:,1) = taula(:,1) + 3;
+taula(:,1) = taula(:,1) + 2.7;
 
 C = [0.5];
 
@@ -44,23 +48,25 @@ material metal;
 [Xp1,Yp1,Zp1] = cylinder(0.3);
 Zp1(2,:) = 5;
 
-surface((Xp1)/10 + 1,(Yp1)/10 + 0.5,(Zp1-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp1)/10 + 0.75,(Yp1)/10 + 0.5,(Zp1-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 [Xp2,Yp2,Zp2] = cylinder(0.3);
 Zp2(2,:) = 5;
-surface((Xp2)/10 + 1,(Yp2)/10 - 0.5,(Zp2-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp2)/10 + 0.75,(Yp2)/10 - 0.5,(Zp2-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp3,Yp3,Zp3] = cylinder(0.3);
 Zp3(2,:) = 5;
-surface((Xp3)/10 + 2.95,(Yp3)/10 + 0.5,(Zp3-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
+surface((Xp3)/10 + 2.6,(Yp3)/10 + 0.5,(Zp3-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64] );
 
 [Xp4,Yp4,Zp4] = cylinder(0.3);
 Zp4(2,:) = 5;
-surface((Xp4)/10 + 2.95,(Yp4)/10 - 0.5,(Zp4-7)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
+surface((Xp4)/10 + 2.6,(Yp4)/10 - 0.5,(Zp4-10)/10,'FaceColor', [.37 .45 .64], 'EdgeColor', [.37 .45 .64]);
 
 
 desplz_x = 1.5
 desplz_y = 1.5
+
+
 %MESA AUXILIAR
 X_ma = [-13 -8 -8 -13];
 Y_ma = [23 23 28 28];
@@ -95,3 +101,4 @@ surface((Xpa4-8.5)/10+desplz_x,(Ypa4+27.5)/10-desplz_y,(Zpa4-7)/10,'FaceColor', 
 
 
 view(3);
+
