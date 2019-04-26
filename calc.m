@@ -52,6 +52,8 @@ Zorigen = ZcentroCrani - (ZcentroDicom * mmCoord_Z)
 digits(4)
 origen = vpa([Xorigen,Yorigen,Zorigen])
 
+
+
 puntoFueraCraneo = [48*1.4,129.12,11.21]
 puntoFueraCraneo(1) = (puntoFueraCraneo(1) * mmCoord_X) + origen(1)
 puntoFueraCraneo(2) = (puntoFueraCraneo(2) * mmCoord_Y) + origen(2)

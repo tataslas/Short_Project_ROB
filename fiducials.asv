@@ -10,11 +10,11 @@ tor1Dicom(3) = ((tor1Dicom(3) * mmCoord_Z) + origen(3))
 
 tor2Dicom(1) = (tor2Dicom(1) * mmCoord_X) + origen(1)
 tor2Dicom(2) = -((tor2Dicom(2) * mmCoord_Y) + origen(2))
-tor2Dicom(3) = ((tor2Dicom(3) * mmCoord_Z) + origen(3))
+tor2Dicom(3) = -((tor2Dicom(3) * mmCoord_Z) + origen(3))
 
 tor3Dicom(1) = (tor3Dicom(1) * mmCoord_X) + origen(1)
 tor3Dicom(2) = -((tor3Dicom(2) * mmCoord_Y) + origen(2))
-tor3Dicom(3) = ((tor3Dicom(3) * mmCoord_Z) + origen(3))
+tor3Dicom(3) = -((tor3Dicom(3) * mmCoord_Z) + origen(3))
 
 radius=0.005;
 
@@ -28,17 +28,21 @@ stlPlot(Vs,Fs,sphere)
 % labelling
 zlabel('z');ylabel('y');xlabel('x');
 
+figure
+[x,y,z] = sphere(500);
+surf(x,y,z,[0.5 0.5 0.5])
+
 [Vs, Fs, Ns, sphere] = stlRead('sphere_ascii.stl');
+esfera.vertices = Vs;
+esfera.faces = Fs;
 Vs = Vs/4000
-Vs(:,1) = Vs(:,1)+0.005
-Vs(:,2) = Vs(:,2)+0.0025
 Vs = Vs+tor2Dicom;
 stlPlot(Vs,Fs,sphere)
 
 [Vs, Fs, Ns, sphere] = stlRead('sphere_ascii.stl');
+esfera.vertices = Vs;
+esfera.faces = Fs;
 Vs = Vs/4000
-Vs(:,1) = Vs(:,1)+0.005
-Vs(:,2) = Vs(:,2)+0.0025
 Vs = Vs+tor3Dicom;
 stlPlot(Vs,Fs,sphere)
 
