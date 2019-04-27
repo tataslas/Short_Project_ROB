@@ -13,6 +13,7 @@ Vc(:,1) = Vc(:,1)+0.7;
 
 %pintar crani
 stlPlot(Vc, Fc, Crani)
+zlabel('z');ylabel('y');xlabel('x');
 
 %PUMA
 mdl_puma560
@@ -26,6 +27,6 @@ load('F_V_Human_Body.mat')
 V = V/10;
 V = V*rotz(-pi/2);
 V(:,1) = V(:,1)+2.7;
-stlPlot(V,F)
+stlPlot(V,F,'Willy')
 
 

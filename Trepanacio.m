@@ -1,12 +1,12 @@
 %TREPANACIO
-radius=0.1;
+radius=0.05;
 n=200;
 INI = transl(XcentroCrani, YcentroCrani,ZcentroCrani); %center of the part
-circle1 = circle([XcentroCrani YcentroCrani ZcentroCrani], radius);
-circle2 = circle([XcentroCrani YcentroCrani ZcentroCrani], 0.5*radius);
-
-plot3(circle1(1,:), circle1(2,:), circle1(3,:),'g','LineWidth',1);
-patch(circle2(1,:), circle2(2,:), circle2(3,:),'r');
+% circle1 = circle([XcentroCrani YcentroCrani ZcentroCrani], radius);
+% circle2 = circle([XcentroCrani YcentroCrani ZcentroCrani], 0.5*radius);
+% 
+% plot3(circle1(1,:), circle1(2,:), circle1(3,:),'g','LineWidth',1);
+% patch(circle2(1,:), circle2(2,:), circle2(3,:),'r');
 
 % r1 = rotate(circle1,90,[XcentroCrani YcentroCrani ZcentroCrani],[0 1 0]);
 % r2 = rotate(circle2,90,[XcentroCrani YcentroCrani ZcentroCrani],[0 1 0]);

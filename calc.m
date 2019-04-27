@@ -52,6 +52,9 @@ Zorigen = ZcentroCrani - (ZcentroDicom * mmCoord_Z)
 digits(4)
 origen = vpa([Xorigen,Yorigen,Zorigen])
 
+% origen_dibujo = circle(origen, 0.005);
+% plot3(origen_dibujo(1,:), origen_dibujo(2,:), origen_dibujo(3,:),'r');
+
 
 
 puntoFueraCraneo = [48*1.4,129.12,11.21]

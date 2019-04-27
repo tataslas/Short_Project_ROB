@@ -13,7 +13,7 @@ taula(:,1) = taula(:,1) + 2.7;
 C = [0.5];
 
 % labelling
-zlabel('z');ylabel('y');xlabel('x');
+%zlabel('z');ylabel('y');xlabel('x');
 % drawing the figure
 fill3(taula(:,1),taula(:,2),taula(:,3),C,'FaceColor', [.37 .45 .64], 'FaceLighting', 'gouraud', 'EdgeColor', [.37 .45 .64]);
 material metal;
