@@ -29,7 +29,7 @@ load('F_V_Human_Body.mat')
 V = V/10;
 V = V*rotz(-pi/2);
 V(:,1) = V(:,1)+2.7;
-%stlPlot(V,F,'Willy')
+stlPlot(V,F,'Willy')
 
 axis equal
 hold on
